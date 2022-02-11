@@ -2,12 +2,12 @@ const mongoose = require('mongoose')
 
 const goalSchema = mongoose.Schema(
   {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User',
+    },
     text: {
-      user: {
-        type: mongoose.Schema.Types.ObjectsId,
-        required: true,
-        ref: 'User',
-      },
       type: String,
       required: [true, 'please add a text value'],
     },
